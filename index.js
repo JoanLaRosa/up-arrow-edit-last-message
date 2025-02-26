@@ -79,12 +79,12 @@ function getDateFromString(string) {
     ? matches[2].replace(/\.\s?/g, "").toLowerCase()
     : null;
 
-  const userLanguage = chrome.i18n.getUILanguage();
+  const userLanguage = browser.i18n.getUILanguage();
 
   const dateParts = new Intl.DateTimeFormat(userLanguage).formatToParts();
-  const day = dateParts.find(part => part.type === 'day').value;
-  const month = dateParts.find(part => part.type === 'month').value;
-  const year = dateParts.find(part => part.type === 'year').value;
+  const day = dateParts.find((part) => part.type === "day").value;
+  const month = dateParts.find((part) => part.type === "month").value;
+  const year = dateParts.find((part) => part.type === "year").value;
 
   let [hours, minutes] = timePart.split(":").map(Number);
 
@@ -112,7 +112,7 @@ const isMessageEditable = (messageBubble) => {
 
   const isPoll = Boolean(
     messageBubble.querySelector(
-      `[aria-label*='${chrome.i18n.getMessage("poll")}' i]`
+      `[aria-label*='${browser.i18n.getMessage("poll")}' i]`
     )
   );
   const wasSent = Boolean(
@@ -134,7 +134,7 @@ const isMessageEditable = (messageBubble) => {
   const isRecent = elapsedTime <= 15 * 60 * 1000; // Fifteen minutes in milliseconds.
 
   if (!isRecent) {
-    alert(chrome.i18n.getMessage("editTimeLimitErrorMessage"));
+    alert(browser.i18n.getMessage("editTimeLimitErrorMessage"));
     return false;
   }
 
@@ -168,7 +168,7 @@ const handleKeyUp = async (event) => {
   const lastSentMessage = [...document.querySelectorAll(".message-out")].at(-1);
 
   const messageBubble = lastSentMessage.querySelector(
-    `[aria-label='${chrome.i18n.getMessage("you")}:' i]`
+    `[aria-label='${browser.i18n.getMessage("you")}:' i]`
   )?.parentElement;
 
   if (!isMessageEditable(messageBubble)) return;
@@ -176,14 +176,14 @@ const handleKeyUp = async (event) => {
   messageBubble.dispatchEvent(new MouseEvent("mouseover", { bubbles: true }));
 
   const contextMenuButton = await getElementWhenExists(
-    `[aria-label='${chrome.i18n.getMessage("contextMenu")}' i]`,
+    `[aria-label='${browser.i18n.getMessage("contextMenu")}' i]`,
     messageBubble
   );
 
   contextMenuButton.click();
 
   const editButton = await getElementWhenExists(
-    `[aria-label='${chrome.i18n.getMessage("edit")}' i]`
+    `[aria-label='${browser.i18n.getMessage("edit")}' i]`
   );
 
   editButton.click();

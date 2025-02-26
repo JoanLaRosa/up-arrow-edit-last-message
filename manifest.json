@@ -5,10 +5,20 @@
   "description": "Edit your last message on WA Web app by pressing the Up Arrow key.",
   "author": "valentincostadev@gmail.com",
   "default_locale": "en",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "wa-edit-last@valentincostadev.com",
+      "strict_min_version": "109.0"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["https://web.whatsapp.com/*"],
-      "js": ["index.js"]
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "index.js"
+      ]
     }
   ],
   "icons": {
