@@ -1,14 +1,14 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "version": "0.0.5",
   "description": "Edit your last message on WA Web app by pressing the Up Arrow key.",
   "author": "valentincostadev@gmail.com",
   "default_locale": "en",
-  "browser_specific_settings": {
+  "applications": {
     "gecko": {
       "id": "{aa2c0649-72b9-455a-a69a-7ac3740c8003}",
-      "strict_min_version": "109.0"
+      "strict_min_version": "48.0"
     }
   },
   "content_scripts": [
