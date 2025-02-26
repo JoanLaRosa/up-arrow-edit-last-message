@@ -2,7 +2,8 @@
 
 <img align="right" width="48" src="icon48.png" style="margin-left: 20px; margin-bottom: 20px;">
 
-This is Chrome extension that allows you to **edit your last sent message** on WA's web app by pressing the **Up Arrow key** when the focus is on the message input field.
+This code is a translation of the Chrome extension from: https://github.com/valentincostam/up-arrow-edit-last-message
+This is **Firefox** extension that allows you to **edit your last sent message** on WA's web app by pressing the **Up Arrow key** when the focus is on the message input field.
 
 The code has no dependencies and does not use any third-party libraries.
 
